@@ -1,0 +1,44 @@
+/* input:focus {
+  background-color: red;
+}
+
+input:valid {
+  background-color: green;
+}
+
+input:invalid {
+  background-color: yellow;
+} */
+
+input {
+  display: block;
+  border: 1px solid #000;
+  border-radius: 40px;
+  padding: 40px;
+  margin: 32px;
+  font-size: 32px;
+  font-weight: 500;
+  /* outline: none; */
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+::-webkit-input-placeholder {
+  color: blue;
+}
+::-moz-placeholder {
+  color: blue;
+}
+:-moz-placeholder {
+  color: blue;
+}
+:-ms-input-placeholder {
+  color: blue;
+}
+
+input:focus::-webkit-input-placeholder {
+  transition: 0.3s;
+  color: transparent;
+}
