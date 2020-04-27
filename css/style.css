@@ -1,4 +1,4 @@
-/* input:focus {
+input:focus {
   background-color: red;
 }
 
@@ -8,7 +8,7 @@ input:valid {
 
 input:invalid {
   background-color: yellow;
-} */
+}
 
 input {
   display: block;
