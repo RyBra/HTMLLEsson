@@ -7,51 +7,27 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="action.php" method="POST" class="login-form">
-      <label for="login">Login</label>
-      <input type="text" required name="login" placeholder="Login" id="login" />
-      <br />
-      <input type="number" required name="phone" />
-      <br />
-      <input type="password" required name="password" />
-      <br />
-      <input type="hidden" name="CSRFToken" />
-      <br />
-      <label for="radio1">radio1</label>
-      <input id="radio1" type="radio" name="radio" value="1" />
+    <header>
+      <div class="logo"><span>Gifts For Fuck</span></div>
+      <button class="burger-button" id="openMenu"></button>
+      <nav id="headerMenu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#" class="active">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="button">Gift Finder</a>
+    </header>
+    <script>
+      const btn = document.getElementById("openMenu");
+      const menu = document.getElementById("headerMenu");
 
-      <label for="radio2">radio1</label>
-      <input id="radio2" type="radio" name="radio" value="2" />
-
-      <label for="radio3">radio1</label>
-      <input id="radio3" type="radio" name="radio" value="3" />
-
-      <label for="radio4">radio1</label>
-      <input type="radio" name="radio" value="4" />
-      <br />
-      <input type="checkbox" name="check1" value="1" />
-      <input type="checkbox" name="check2" value="2" />
-      <input type="checkbox" name="check3" value="3" />
-      <input type="checkbox" name="check4" value="4" />
-      <br />
-      <input type="email" required name="email" />
-      <br />
-      <input type="range" name="range" />
-
-      <select name="cars" id="cars">
-        <optgroup label="KEK">
-          <option value="BMW"><a href="#">123123</a></option>
-          <option value="1">BMW</option>
-          <option value="1">BMW</option>
-        </optgroup>
-        <optgroup label="KEK">
-          <option value="BMW">BMW</option>
-          <option value="1">BMW</option>
-          <option value="1">BMW</option>
-        </optgroup>
-      </select>
-
-      <button type="submit">Отправить</button>
-    </form>
+      btn.addEventListener("click", (event) => {
+        menu.classList.toggle("open");
+        btn.classList.toggle("opened");
+      });
+    </script>
   </body>
 </html>
