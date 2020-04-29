@@ -8,16 +8,23 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.logo span {
-  font-family: "Homemade Apple", cursive;
-}
-
 header {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   justify-content: space-between;
   align-items: center;
   padding: 40px 16px;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo span {
+  font-family: "Homemade Apple", cursive;
 }
 
 header nav {
@@ -27,6 +34,11 @@ header nav {
   top: 0;
   left: -100%;
   background-color: #fff;
+  transition: left 0.3s ease-in-out;
+}
+
+header nav.open {
+  left: 0;
 }
 
 header nav ul {
@@ -49,6 +61,10 @@ header nav ul li a {
   color: #f7941e;
 }
 
+header .button {
+  margin: 0 auto;
+}
+
 .button {
   display: inline-block;
   padding: 12px 24px;
@@ -64,8 +80,88 @@ header nav ul li a {
   background-color: #f7941e;
 }
 
+.burger-button {
+  position: absolute;
+  border: none;
+  height: 2px;
+  width: 32px;
+  background-color: #000;
+  top: 56px;
+  left: 16px;
+  z-index: 9999;
+  transition: 0.3s ease-in-out;
+}
+
+.burger-button:before,
+.burger-button:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 32px;
+  background-color: #000;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.burger-button:before {
+  top: -8px;
+}
+
+.burger-button:after {
+  bottom: -8px;
+}
+
+.burger-button.opened {
+  transform: rotate(45deg);
+}
+
+.burger-button.opened:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+.burger-button.opened:before {
+  top: 0;
+}
+
 @media screen and (min-width: 425px) {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    padding: 40px;
+  }
+
+  header .logo {
+    width: auto;
+    margin: 0;
+  }
+
+  header .button {
+    margin: 0;
+  }
+
+  header nav {
+    display: block;
+    position: static;
+    width: auto;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+  }
+
+  header nav ul {
+    display: flex;
+  }
+
+  header nav ul li {
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    padding: 40px 80px;
+  }
 }
